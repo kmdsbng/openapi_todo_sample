@@ -1,0 +1,94 @@
+openapi: 3.0.0
+info:
+  title: todo
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /todo_task:
+    post:
+      summary: post_todo
+      tags: []
+      responses: {}
+      operationId: post-todo-todo_task
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                todoTask:
+                  $ref: '#/components/schemas/TodoTask'
+              required:
+                - todoTask
+        description: ''
+    delete:
+      summary: delete_todo
+      tags: []
+      responses: {}
+      operationId: delete-todo-todo_task
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: id
+          required: true
+    get:
+      summary: get_todo
+      tags: []
+      responses: {}
+      operationId: get-todo-todo_task
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: id
+          required: true
+    parameters: []
+  /todo_list:
+    get:
+      summary: todo_list
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  todos:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/TodoTask'
+                required:
+                  - todos
+      operationId: get-todo_list
+  /get_todo_task:
+    get:
+      summary: get_todo_task
+      tags: []
+      responses:
+        '200':
+          description: OK
+      operationId: get-get_todo_task
+      parameters: []
+components:
+  schemas:
+    TodoTask:
+      title: TodoTask
+      type: object
+      properties:
+        id:
+          type: string
+        label:
+          type: string
+        created_at:
+          type: string
+        finished:
+          type: boolean
+      required:
+        - id
+        - label
+        - created_at
+        - finished
