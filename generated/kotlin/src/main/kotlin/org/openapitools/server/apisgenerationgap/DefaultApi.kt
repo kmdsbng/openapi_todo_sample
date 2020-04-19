@@ -64,11 +64,12 @@ fun Route.DefaultApi() {
           "todos" : [ {
             "created_at" : "2020/04/11 23:59:58",
             "finished" : true,
+            "id" : "1",
             "label" : "label"
           }, {
             "created_at" : "created_at",
             "finished" : true,
-            "id" : "id",
+            "id" : "2",
             "label" : "label"
           } ]
         }"""

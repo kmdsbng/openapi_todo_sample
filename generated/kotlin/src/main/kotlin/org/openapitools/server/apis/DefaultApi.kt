@@ -48,13 +48,7 @@ fun Route.DefaultApi() {
 
 
     get<Paths.getGetTodoTask> {  _: Paths.getGetTodoTask ->
-        // call.respond(HttpStatusCode.NotImplemented)
-        val exampleContentType = "application/json"
-        val exampleContentString = """{
-          "result" : "Success"
-        }"""
-
-        call.respond(gson.fromJson(exampleContentString, empty::class.java))
+        call.respond(HttpStatusCode.NotImplemented)
     }
 
 
@@ -62,7 +56,7 @@ fun Route.DefaultApi() {
         val exampleContentType = "application/json"
         val exampleContentString = """{
           "todos" : [ {
-            "created_at" : "2020/04/11 23:59:58",
+            "created_at" : "created_at",
             "finished" : true,
             "id" : "id",
             "label" : "label"
@@ -82,14 +76,8 @@ fun Route.DefaultApi() {
     }
 
 
-    get<Paths.getTodoTodoTask> {  param: Paths.getTodoTodoTask ->
-        // call.respond(HttpStatusCode.NotImplemented)
-        val exampleContentType = "application/json"
-        val exampleContentString = """{
-          "result" : "Success"
-        }"""
-
-        call.respond(gson.fromJson(exampleContentString, empty::class.java))
+    get<Paths.getTodoTodoTask> {  _: Paths.getTodoTodoTask ->
+        call.respond(HttpStatusCode.NotImplemented)
     }
 
 
