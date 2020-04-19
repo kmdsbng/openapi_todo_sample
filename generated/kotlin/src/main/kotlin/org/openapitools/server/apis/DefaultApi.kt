@@ -62,7 +62,7 @@ fun Route.DefaultApi() {
         val exampleContentType = "application/json"
         val exampleContentString = """{
           "todos" : [ {
-            "created_at" : "created_at",
+            "created_at" : "2020/04/11 23:59:58",
             "finished" : true,
             "id" : "id",
             "label" : "label"
