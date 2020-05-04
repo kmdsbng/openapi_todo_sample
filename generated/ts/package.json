@@ -1,15 +1,13 @@
 {
-  "name": "todo-api",
-  "version": "1.0",
-  "description": "OpenAPI client for todo-api",
-  "author": "OpenAPI-Generator",
-  "main": "./dist/index.js",
-  "typings": "./dist/index.d.ts",
+  "name": "ts",
+  "version": "1.0.0",
+  "description": "This generator creates TypeScript/JavaScript client that utilizes [Fetch API](https://fetch.spec.whatwg.org/). The generated Node module can be used in the following environments:",
+  "main": "webpack.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "prepare": "npm run build"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/react": "^16.9.34",
@@ -25,5 +23,3 @@
     "react-dom": "^16.13.1"
   }
 }
-
-
