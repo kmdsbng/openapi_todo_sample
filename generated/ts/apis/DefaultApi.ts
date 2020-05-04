@@ -32,7 +32,6 @@ export interface GetTodoTodoTaskRequest {
 }
 
 export interface PostTodoTodoTaskRequest {
-    id: string;
     inlineObject?: InlineObject;
 }
 
@@ -51,10 +50,14 @@ export class DefaultApi extends runtime.BaseAPI {
 
         const queryParameters: runtime.HTTPQuery = {};
 
+        if (requestParameters.id !== undefined) {
+            queryParameters['id'] = requestParameters.id;
+        }
+
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/todo/todo_task/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
+            path: `/todo_task`,
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -68,6 +71,31 @@ export class DefaultApi extends runtime.BaseAPI {
      */
     async deleteTodoTodoTask(requestParameters: DeleteTodoTodoTaskRequest): Promise<void> {
         await this.deleteTodoTodoTaskRaw(requestParameters);
+    }
+
+    /**
+     * get_todo_task
+     */
+    async getGetTodoTaskRaw(): Promise<runtime.ApiResponse<void>> {
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const response = await this.request({
+            path: `/get_todo_task`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        });
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * get_todo_task
+     */
+    async getGetTodoTask(): Promise<void> {
+        await this.getGetTodoTaskRaw();
     }
 
     /**
@@ -106,10 +134,14 @@ export class DefaultApi extends runtime.BaseAPI {
 
         const queryParameters: runtime.HTTPQuery = {};
 
+        if (requestParameters.id !== undefined) {
+            queryParameters['id'] = requestParameters.id;
+        }
+
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/todo/todo_task/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
+            path: `/todo_task`,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -129,10 +161,6 @@ export class DefaultApi extends runtime.BaseAPI {
      * post_todo
      */
     async postTodoTodoTaskRaw(requestParameters: PostTodoTodoTaskRequest): Promise<runtime.ApiResponse<void>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling postTodoTodoTask.');
-        }
-
         const queryParameters: runtime.HTTPQuery = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -140,7 +168,7 @@ export class DefaultApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/todo/todo_task/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
+            path: `/todo_task`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,

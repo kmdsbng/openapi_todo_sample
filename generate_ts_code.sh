@@ -3,4 +3,5 @@ docker run --rm \
   -i /local/reference/todo.v1.yaml \
   -g typescript-fetch \
   -o /local/generated/ts
+  -DnpmName='todo-api'
 
