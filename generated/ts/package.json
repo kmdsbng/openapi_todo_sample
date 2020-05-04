@@ -1,13 +1,15 @@
 {
-  "name": "ts",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "todo-api",
+  "version": "1.0",
+  "description": "OpenAPI client for todo-api",
+  "author": "OpenAPI-Generator",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "prepare": "npm run build"
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/react": "^16.9.34",
@@ -23,3 +25,5 @@
     "react-dom": "^16.13.1"
   }
 }
+
+
