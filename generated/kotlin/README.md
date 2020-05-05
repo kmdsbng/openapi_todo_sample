@@ -45,15 +45,14 @@ docker run -p 8080:8080 kotlin-server
 <a name="documentation-for-api-endpoints"></a>
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://localhost:3000*
+All URIs are relative to *http://localhost:4010*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DefaultApi* | [**deleteTodoTodoTask**](docs/DefaultApi.md#deletetodotodotask) | **DELETE** /todo_task | delete_todo
-*DefaultApi* | [**getGetTodoTask**](docs/DefaultApi.md#getgettodotask) | **GET** /get_todo_task | get_todo_task
-*DefaultApi* | [**getTodoList**](docs/DefaultApi.md#gettodolist) | **GET** /todo_list | todo_list
-*DefaultApi* | [**getTodoTodoTask**](docs/DefaultApi.md#gettodotodotask) | **GET** /todo_task | get_todo
-*DefaultApi* | [**postTodoTodoTask**](docs/DefaultApi.md#posttodotodotask) | **POST** /todo_task | post_todo
+*TodoApi* | [**deleteTodoTodoTask**](docs/TodoApi.md#deletetodotodotask) | **DELETE** /delete_todo_task | delete_todo_task
+*TodoApi* | [**getGetTodoTask**](docs/TodoApi.md#getgettodotask) | **GET** /get_todo_task | get_todo_task
+*TodoApi* | [**getTodoList**](docs/TodoApi.md#gettodolist) | **GET** /todo_list | todo_list
+*TodoApi* | [**postCreateTodoTask**](docs/TodoApi.md#postcreatetodotask) | **POST** /create_todo_task | create_todo_task
 
 
 <a name="documentation-for-models"></a>
@@ -61,7 +60,9 @@ Class | Method | HTTP request | Description
 
  - [org.openapitools.server.models.InlineObject](docs/InlineObject.md)
  - [org.openapitools.server.models.InlineResponse200](docs/InlineResponse200.md)
+ - [org.openapitools.server.models.ResultState](docs/ResultState.md)
  - [org.openapitools.server.models.TodoTask](docs/TodoTask.md)
+ - [org.openapitools.server.models.TodoTasks](docs/TodoTasks.md)
 
 
 <a name="documentation-for-authorization"></a>

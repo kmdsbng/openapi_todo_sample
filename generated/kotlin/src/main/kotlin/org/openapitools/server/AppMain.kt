@@ -22,7 +22,7 @@ import io.ktor.metrics.Metrics
 import io.ktor.routing.Routing
 import java.util.concurrent.TimeUnit
 import io.ktor.util.KtorExperimentalAPI
-import org.openapitools.server.apisgenerationgap.DefaultApi
+import org.openapitools.server.apisgenerationgap.TodoApi
 
 
 @KtorExperimentalAPI
@@ -52,7 +52,7 @@ fun Application.main() {
     install(Compression, ApplicationCompressionConfiguration()) // see http://ktor.io/features/compression.html
     install(Locations) // see http://ktor.io/features/locations.html
     install(Routing) {
-        DefaultApi()
+        TodoApi()
     }
 
 

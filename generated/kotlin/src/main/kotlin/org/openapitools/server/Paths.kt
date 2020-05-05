@@ -16,19 +16,20 @@ import io.ktor.locations.Location
 
 object Paths {
     /**
-     * delete_todo
+     * delete_todo_task
      * 
      * @param id  
      */
     @KtorExperimentalLocationsAPI
-    @Location("/todo_task") class deleteTodoTodoTask(val id: kotlin.String)
+    @Location("/delete_todo_task") class deleteTodoTodoTask(val id: kotlin.String)
 
     /**
      * get_todo_task
      * 
+     * @param id  
      */
     @KtorExperimentalLocationsAPI
-    @Location("/get_todo_task") class getGetTodoTask()
+    @Location("/get_todo_task") class getGetTodoTask(val id: kotlin.String)
 
     /**
      * todo_list
@@ -36,13 +37,5 @@ object Paths {
      */
     @KtorExperimentalLocationsAPI
     @Location("/todo_list") class getTodoList()
-
-    /**
-     * get_todo
-     * 
-     * @param id  
-     */
-    @KtorExperimentalLocationsAPI
-    @Location("/todo_task") class getTodoTodoTask(val id: kotlin.String)
 
 }
