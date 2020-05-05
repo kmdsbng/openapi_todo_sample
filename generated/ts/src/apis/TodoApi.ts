@@ -42,7 +42,7 @@ export interface PostCreateTodoTaskRequest {
 }
 
 /**
- * no description
+ * 
  */
 export class TodoApi extends runtime.BaseAPI {
 
