@@ -18,9 +18,6 @@ import {
     InlineObject,
     InlineObjectFromJSON,
     InlineObjectToJSON,
-    InlineResponse200,
-    InlineResponse200FromJSON,
-    InlineResponse200ToJSON,
 } from '../models';
 
 export interface DeleteTodoTodoTaskRequest {
@@ -71,57 +68,6 @@ export class DefaultApi extends runtime.BaseAPI {
      */
     async deleteTodoTodoTask(requestParameters: DeleteTodoTodoTaskRequest): Promise<void> {
         await this.deleteTodoTodoTaskRaw(requestParameters);
-    }
-
-    /**
-     * get_todo_task
-     */
-    async getGetTodoTaskRaw(): Promise<runtime.ApiResponse<void>> {
-        const queryParameters: runtime.HTTPQuery = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        const response = await this.request({
-            path: `/get_todo_task`,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        });
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     * get_todo_task
-     */
-    async getGetTodoTask(): Promise<void> {
-        await this.getGetTodoTaskRaw();
-    }
-
-    /**
-     * todo_list
-     */
-    async getTodoListRaw(): Promise<runtime.ApiResponse<InlineResponse200>> {
-        const queryParameters: runtime.HTTPQuery = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        const response = await this.request({
-            path: `/todo_list`,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        });
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => InlineResponse200FromJSON(jsonValue));
-    }
-
-    /**
-     * todo_list
-     */
-    async getTodoList(): Promise<InlineResponse200> {
-        const response = await this.getTodoListRaw();
-        return await response.value();
     }
 
     /**

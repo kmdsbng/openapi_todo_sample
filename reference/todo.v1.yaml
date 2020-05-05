@@ -3,44 +3,25 @@ info:
   title: todo
   version: '1.0'
 servers:
-  - url: 'http://localhost:3000'
+  - url: 'http://localhost:4010'
 paths:
-  /todo_task:
-    post:
-      summary: post_todo
-      tags: []
-      responses: {}
-      operationId: post-todo-todo_task
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                todoTask:
-                  $ref: '#/components/schemas/TodoTask'
-              required:
-                - todoTask
-        description: ''
+  /delete_todo_task:
     delete:
-      summary: delete_todo
-      tags: []
-      responses: {}
+      summary: delete_todo_task
+      tags:
+        - todo
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResultState'
       operationId: delete-todo-todo_task
       parameters:
         - schema:
             type: string
-          in: query
-          name: id
-          required: true
-    get:
-      summary: get_todo
-      tags: []
-      responses: {}
-      operationId: get-todo-todo_task
-      parameters:
-        - schema:
-            type: string
+          example: '1'
           in: query
           name: id
           required: true
@@ -48,7 +29,8 @@ paths:
   /todo_list:
     get:
       summary: todo_list
-      tags: []
+      tags:
+        - todo
       responses:
         '200':
           description: OK
@@ -67,12 +49,58 @@ paths:
   /get_todo_task:
     get:
       summary: get_todo_task
-      tags: []
+      tags:
+        - todo
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TodoTask'
       operationId: get-get_todo_task
+      parameters:
+        - schema:
+            type: string
+          example: '1'
+          in: query
+          name: id
+          required: true
+      description: ''
+    parameters: []
+  /create_todo_task:
+    post:
+      summary: create_todo_task
+      tags:
+        - todo
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResultState'
+      operationId: post-create_todo_task
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                todoTask:
+                  $ref: '#/components/schemas/TodoTask'
+              required:
+                - todoTask
+            examples:
+              example-1:
+                value:
+                  todoTask:
+                    id: '1'
+                    label: todo sample
+                    created_at: '2020/05/03 22:00:05'
+                    finished: false
       parameters: []
+      description: ''
 components:
   schemas:
     TodoTask:
@@ -92,3 +120,26 @@ components:
         - label
         - created_at
         - finished
+      x-examples: {}
+      x-tags:
+        - todo
+    ResultState:
+      title: ResultState
+      type: object
+      properties:
+        state:
+          type: string
+          enum:
+            - OK
+            - Fail
+          example: OK
+        message:
+          type: string
+      x-tags:
+        - todo
+    TodoTasks:
+      title: TodoTasks
+      type: object
+      properties:
+        todos:
+          $ref: '#/components/schemas/TodoTask'

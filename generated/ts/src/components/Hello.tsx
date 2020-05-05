@@ -1,5 +1,5 @@
 import * as React from "react";
-import {DefaultApi} from "../apis";
+import {TodoApi} from "../apis";
 import {Configuration} from "../runtime";
 export * from '../runtime';
 export * from '../apis';
@@ -20,7 +20,7 @@ export class Hello extends React.Component<HelloProps, {}> {
 
     onClickTodoList = async () => {
         const config = new Configuration({basePath: "http://127.0.0.1:4010"});
-        const api = new DefaultApi(config);
+        const api = new TodoApi(config);
 
         const {todos} = await api.getTodoList();
 
