@@ -1,6 +1,8 @@
 cd `dirname $0`
 cd ..
 
+docker pull stoplight/prism:3
+
 docker run --rm \
   -v ${PWD}:/local \
   -it \
