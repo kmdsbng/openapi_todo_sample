@@ -1,6 +1,11 @@
+cd `dirname $0`
+cd ..
+
+docker pull openapitools/openapi-generator-cli
+
 docker run --rm \
   -v ${PWD}:/local openapitools/openapi-generator-cli generate \
-  -i /local/reference/todo.v1.yaml \
+  -i /local/openapi/todo.v1.yaml \
   -g kotlin-server \
   -o /local/generated/kotlin
 
