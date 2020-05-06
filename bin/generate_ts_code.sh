@@ -7,9 +7,9 @@ docker pull openapitools/openapi-generator-cli
 
 docker run --rm \
   -v ${PWD}:/local openapitools/openapi-generator-cli generate \
-  -i /local/openapi/todo.v1.yaml \
+  -i /local/openapi/openapi.yaml \
   -g typescript-fetch \
-  --additional-properties=npmName='todo-api',typescriptThreePlus=true \
+  --additional-properties=npmName='openapiproject',typescriptThreePlus=true \
   -o /local/generated/ts
 
 
