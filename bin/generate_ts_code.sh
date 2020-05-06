@@ -16,16 +16,16 @@ docker run --rm \
 mkdir -p frontend/src/
 mkdir -p frontend/.openapi-generator/
 
-cp -r generated/ts/src/models/ frontend/src/
-cp -r generated/ts/src/apis/ frontend/src/
+cp -r generated/ts/src/models frontend/src/models
+cp -r generated/ts/src/apis frontend/src/apis
 # cp generated/ts/src//index.ts frontend/src/
-cp generated/ts/src//runtime.ts frontend/src/
-cp -r generated/ts/README.md frontend/
+cp generated/ts/src/runtime.ts frontend/src/
+cp generated/ts/README.md frontend/
 cp -n generated/ts/package.json frontend/
 cp -n generated/ts/tsconfig.json frontend/
 cp -n generated/ts/.npmignore frontend/
 cp -n generated/ts/.gitignore frontend/
-cp -r generated/ts/.openapi-generator-ignore frontend/
-cp -r generated/ts/.openapi-generator/VERSION frontend/.openapi-generator/
+cp generated/ts/.openapi-generator-ignore frontend/
+cp generated/ts/.openapi-generator/VERSION frontend/.openapi-generator/
 
 
