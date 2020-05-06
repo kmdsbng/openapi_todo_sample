@@ -16,8 +16,8 @@ docker run --rm \
 mkdir -p frontend/src/
 mkdir -p frontend/.openapi-generator/
 
-cp -r generated/ts/src/models frontend/src/models
-cp -r generated/ts/src/apis frontend/src/apis
+cp -r generated/ts/src/models frontend/src/
+cp -r generated/ts/src/apis frontend/src/
 # cp generated/ts/src//index.ts frontend/src/
 cp generated/ts/src/runtime.ts frontend/src/
 cp generated/ts/README.md frontend/
