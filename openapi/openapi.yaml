@@ -106,6 +106,9 @@ components:
     TodoTask:
       title: TodoTask
       type: object
+      x-examples: {}
+      x-tags:
+        - todo
       properties:
         id:
           type: string
@@ -115,14 +118,13 @@ components:
           type: string
         finished:
           type: boolean
+        author:
+          type: string
       required:
         - id
         - label
         - created_at
         - finished
-      x-examples: {}
-      x-tags:
-        - todo
     ResultState:
       title: ResultState
       type: object
